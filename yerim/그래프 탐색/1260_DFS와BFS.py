@@ -7,10 +7,12 @@ for i in range(1, Vn + 1) :
     V[i] = [] # 빈 리스트 채워줌 {1: [], 2: [], ...}
 for i in range(En) : 
     v1, v2 = map(int, input().split())
-    V[v1].append(v2)
-    V[v2].append(v1)
+    V[v1].append(v2) # V의 ┌ v1(1)번째자리에 v2(2)가 들어감
+    V[v2].append(v1) # V: {1: [2], 2: [1], 3:[]...} => 1번 노드는 2번 노드랑 연결되어있고..
 for i in range(1, Vn + 1) : 
     V[i].sort()
+# print(V) # {1: [2, 5], 2: [1, 3, 5], 3: [2], 4: [7], 5: [1, 2, 6], 6: [5], 7: [4]}
+
 
 gone = []
 def DFS(now) : 
