@@ -7,13 +7,13 @@ for i in range(n) :
     C.append(int(input()))
 
 count = [0 for i in range(k + 1)]
-for now in range(1, k + 1):
-    a = []
-    for coin in C:
+for now in range(1, k + 1) : 
+    before = []
+    for coin in C : 
         if coin <= now and count[now - coin] != -1:
-            a.append(count[now - coin])
-    if not a:
+            before.append(count[now - coin])
+    if not before : 
         count[now] = -1
     else:
-        count[now] = min(a) + 1
+        count[now] = min(before) + 1
 print(count[k])

@@ -5,13 +5,11 @@ import heapq
 Vn = int(input())
 En = int(input())
 V = {}
-sumc = 0
 for i in range(1, Vn + 1) : 
     V[i] = []
 for i in range(En) : 
     v1, v2, c = map(int, input().split())
     V[v1].append([v2, c])
-    sumc = sumc + c
 start, end = map(int, input().split())
 
 maxc = 100000000

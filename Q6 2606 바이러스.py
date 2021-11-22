@@ -13,7 +13,7 @@ for i in range(En) :
 for i in range(1, Vn + 1) : 
     V[i].sort()
 
-gone = [1]
+gone = []
 count = 0
 def BFS(now) : 
     global count
