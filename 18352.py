@@ -47,6 +47,7 @@ graph = list([] for _ in range(n + 1))
 for _ in range(m):
     i, j = map(int, sys.stdin.readline().split())
     graph[i].append(j)
+print(graph)
 get_cost(x)
 if k not in cost:
     print(-1)
