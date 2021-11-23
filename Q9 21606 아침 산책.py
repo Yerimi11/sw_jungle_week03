@@ -3,8 +3,7 @@ input = sys.stdin.readline
 sys.setrecursionlimit(10**8)
 
 n = int(input())
-C = list(input())
-del C[-1]
+C = list(input().rstrip())
 out = []
 for i in range(n) : 
     C[i] = int(C[i])

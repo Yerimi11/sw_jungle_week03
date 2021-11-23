@@ -17,7 +17,6 @@ for i in range(r) :
 
 dx = [1, -1, 0, 0]
 dy = [0, 0, 1, -1]
-done = False
 while que : 
     a, b, t, f = que.popleft()
     for i in range(4) : 
@@ -31,10 +30,6 @@ while que :
                 T[x][y] = f
                 que.append([x, y, t + 1, f])
             elif f == 'S' and T[x][y] == 'D' : 
-                done = True
                 print(t + 1)
-                break
-    if done : 
-        break
-if not done : 
-    print('KAKTUS')
+                exit(0)
+print('KAKTUS')
