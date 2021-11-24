@@ -6,9 +6,9 @@ Vn, En = map(int, input().split())
 parent = [0 for i in range(Vn + 1)]
 V = [[] for i in range(Vn + 1)]
 for i in range(En) : 
-    big, small = map(int, input().split()) # 앞에 숫자가 순서상 앞이니까 big
-    V[big].append(small) #인접리스트에 삽입
-    parent[small] = parent[small] + 1
+    a, b = map(int, input().split()) # 앞에 숫자가 순서상 앞이니까 big=a
+    V[a].append(b) #인접리스트에 삽입
+    parent[b] = parent[b] + 1
 
 que = deque()
 for i in range(1, Vn + 1) : 
