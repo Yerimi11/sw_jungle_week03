@@ -1,4 +1,5 @@
 import sys
+from collections import deque
 input = sys.stdin.readline
 # 정점 갯수, 간선 갯수, 탐색 시작할 정점 번호
 Vn, En, v = map(int, input().split())
@@ -24,15 +25,15 @@ def DFS(now) :
 DFS(v)              # 그리고 1에서 3도 갈 수 있으니 3에 대해 DFS가 출력됨. 
 print()
 
-gone = [] # BFS가 실행될 때 gone을 다시 비워줌. 
+gone = [] # BFS가 실행될 때 gone을 다시 비워줌.
 def BFS(now) : 
-    que = [now] # 큐를 만들고 큐에 나우 하나만 넣음
-    while que : # 큐라는 리스트에 아직 안 간 곳이 추가 됨
-        q = que[0]
+    queue = deque()
+    queue.append(now) # 큐를 만들고 큐에 나우 하나만 넣음
+    while queue : # 큐라는 리스트에 아직 안 간 곳이 추가 됨
+        q = queue.popleft() # 사실 덱임 큐처럼 씀
         print(q, end = ' ')
         gone.append(q)
-        del que[0] 
         for i in V[q] : # V: {1: [2,3,4], 2: [1,4], 3:[1,4], 4:[1,2,3]}
-            if not i in gone and not i in que : # 이미 간 곳도 아니고 갈 예정도 아닐 때
-                que.append(i) # que:[] -> que: [2,3,4]
+            if not i in gone and not i in queue : # 이미 간 곳도 아니고 갈 예정도 아닐 때
+                queue.append(i) # que:[] -> que: [2,3,4]
 BFS(v)

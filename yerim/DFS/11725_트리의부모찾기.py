@@ -12,7 +12,7 @@ for _ in range(n-1):
     Tree[b].append(a) # 반대로도 넣음
     
 def DFS(start, tree, parents):
-    for i in tree[start]: # 무슨 원리로 부모노드가 뽑히는거지??
+    for i in tree[start]: # 무슨 원리로 부모노드가 뽑히는거지?? - 인접노드
         if parents[i] == 0: 
             parents[i] = start # parents 에 [0,0,0..] 중에 i번째를 1로 바꿔준다(방문한 노드 1로)
             DFS(i, tree, parents)
