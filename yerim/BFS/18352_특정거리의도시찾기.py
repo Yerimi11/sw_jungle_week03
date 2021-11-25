@@ -7,8 +7,11 @@ graph = [[] for _ in range(v+1)]
 for _ in range(e):
     # graph에 인접 리스트로 인풋 받기
     a, b = map(int, input().split())
+<<<<<<< HEAD
     if b == start:
         continue
+=======
+>>>>>>> 840a7217985963390414451684b8f3dc617562de
     # a에서 출발해서 b로 도착한다
     graph[a].append(b) # 단방향
 
