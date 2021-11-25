@@ -1,6 +1,5 @@
 import sys
 
-
 sys.setrecursionlimit(10 ** 6)
 
 preorder = []
@@ -16,6 +15,7 @@ def postorder(start, end):
         print(root)
         return
 
+    idx = 0
     for i in range(start + 1, end):
         if preorder[i] > root:
             idx = i

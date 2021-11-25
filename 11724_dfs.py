@@ -1,5 +1,6 @@
 import sys
-sys.setrecursionlimit(10**6)
+
+sys.setrecursionlimit(10 ** 5)
 v, e = map(int, sys.stdin.readline().split())
 graph = [list([0] * (v + 1)) for _ in range(v + 1)]
 visited = list([0] * (v + 1))
@@ -18,12 +19,11 @@ def dfs(x):
 count = 0
 for i in range(1, v + 1):
     dx = sum(visited)
-    print(visited)
-    dfs(i)
+    if dx == v:
+        print(count)
+        exit(0)
     dx_ = sum(visited)
-    print(visited)
     if dx != dx_:
         count += 1
 
-print(graph)
 print(count)

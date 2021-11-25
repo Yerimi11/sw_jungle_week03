@@ -1,14 +1,13 @@
 # 골드 4레벨        최소 스패닝 트리
 # 크루스칼 알고리즘
 # 유니온 파인드
-from sys import stdin
+import sys
 
-read = stdin.readline
-V, S = map(int, read().split())
+V, S = map(int, sys.stdin.readline().split())
 
 edge = []
 for _ in range(S):
-    a, b, w = map(int, read().split())
+    a, b, w = map(int, sys.stdin.readline().split())
     edge.append((w, a, b))
 edge.sort(key=lambda x: x[0])
 parent = list(range(V + 1))

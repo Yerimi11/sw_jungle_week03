@@ -14,8 +14,8 @@ def dijkstra(s):
             exit(0)
         for node in graph[current]:
             next_idx = node[0]
-            c_to_n_cost = node[1]
-            tmp_cost = price + c_to_n_cost  # 현재 위치에서 node 까지의 가격
+            next_cost = node[1]
+            tmp_cost = price + next_cost  # 현재 위치에서 node 까지의 가격
             if tmp_cost < wages[next_idx]:
                 wages[next_idx] = tmp_cost
                 heapq.heappush(queue, (tmp_cost, next_idx))

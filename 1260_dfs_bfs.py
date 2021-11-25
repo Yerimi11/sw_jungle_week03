@@ -17,7 +17,7 @@ def bfs(p):
 
 def dfs(q):
     visited[q] = 1
-    print(visited)
+    # print(visited)
     print(q, end=" ")
     for idx in range(1, n + 1):
         if visited[idx] == 0 and graph[q][idx] == 1:
@@ -31,8 +31,10 @@ graph = list(list(0 for _ in range(n + 1)) for _ in range(n + 1))
 for _ in range(m):
     i, j = map(int, sys.stdin.readline().split())
     graph[i][j] = graph[j][i] = 1
-for i in range(n + 1):
-    print(graph[i])
+
+
+# for i in range(n + 1):
+#     print(graph[i])
 
 dfs(v)
 print()

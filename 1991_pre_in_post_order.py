@@ -5,6 +5,7 @@ dic = {}
 for i in range(n):
     root, left, right = sys.stdin.readline().split()
     dic[root] = [left, right]
+print(dic)
 
 
 def preorder(x):
